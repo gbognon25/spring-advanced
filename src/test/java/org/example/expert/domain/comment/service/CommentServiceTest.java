@@ -34,7 +34,7 @@ class CommentServiceTest {
     private CommentService commentService;
 
     @Test
-    public void comment_등록_중_할일을_찾지_못해_에러가_발생한다() {
+    public void throwsExceptionWhenTodoNotFoundDuringCommentSave() {
         // given
         long todoId = 1;
         CommentSaveRequest request = new CommentSaveRequest("contents");
@@ -52,7 +52,7 @@ class CommentServiceTest {
     }
 
     @Test
-    public void comment를_정상적으로_등록한다() {
+    public void saveCommentSuccessfully() {
         // given
         long todoId = 1;
         CommentSaveRequest request = new CommentSaveRequest("contents");
